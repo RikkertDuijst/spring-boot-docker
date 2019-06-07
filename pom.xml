@@ -5,7 +5,7 @@
 
 	<groupId>guru.springframework</groupId>
 	<artifactId>spring-boot-docker</artifactId>
-	<version>0.0.2-SNAPSHOT</version>
+	<version>0.0.3-SNAPSHOT</version>
 	<packaging>jar</packaging>
 
 	<name>spring-boot-docker</name>
@@ -76,16 +76,28 @@
 							<name>${docker.image.prefix}/${docker.image.name}</name>
 							<build>
 								<!--TODO: see if there's a way to generate a Dockerfile, so we won't have hardcoded version references anymore (so injecting maven's project properties etc)-->
-								<dockerFileDir>${project.basedir}/src/main/docker/</dockerFileDir>
+								<!--<dockerFileDir>${project.basedir}/src/main/docker/</dockerFileDir>-->
+								<dockerFile>${project.basedir}/src/main/docker/Dockerfile</dockerFile>
 
-                                <!--copies artficact to docker build dir in target-->
+								<from>openjdk</from>
+
+								<!--copies artficact to docker build dir in target-->
 								<assembly>
 									<descriptorRef>artifact</descriptorRef>
+									<!--<mode>dir</mode>-->
+
 								</assembly>
-								<tags>
-									<tag>latest</tag>
-									<tag>${project.version}</tag>
-								</tags>
+								<!--TODO:not necessary, since we're using maven filtering and a docker template file-->
+								<!--<tags>-->
+									<!--<tag>latest</tag>-->
+									<!--<tag>${project.version}</tag>-->
+								<!--</tags>-->
+								<!--<ports>-->
+									<!--<port>8080</port>-->
+								<!--</ports>-->
+								<!--<volumes>-->
+									<!--<volume>/tmp</volume>-->
+								<!--</volumes>-->
 							</build>
 						</image>
 					</images>
@@ -94,7 +106,7 @@
 
 
 
-			<!--To be revisited once we're diving into kubernetes/openshift-->
+			<!--&lt;!&ndash;To be revisited once we're diving into kubernetes/openshift&ndash;&gt;-->
 			<!--<plugin>-->
 				<!--<groupId>io.fabric8</groupId>-->
 				<!--<artifactId>fabric8-maven-plugin</artifactId>-->
