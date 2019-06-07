@@ -66,6 +66,13 @@
 
 				<configuration>
 
+					<registry>docker.artifactory</registry>
+					<!--<registry>localhost:443</registry>-->
+					<authConfig>
+						<username>admin</username>
+						<password>password</password>
+					</authConfig>
+
 					<!--TODO: how to make this platform independent (running on a mac now, which is unix based):-->
                     <!--<dockerHost>http://127.0.0.1:2375</dockerHost>-->
                     <dockerHost>unix:///var/run/docker.sock</dockerHost>
@@ -87,11 +94,11 @@
 									<!--<mode>dir</mode>-->
 
 								</assembly>
-								<!--TODO:not necessary, since we're using maven filtering and a docker template file-->
-								<!--<tags>-->
-									<!--<tag>latest</tag>-->
-									<!--<tag>${project.version}</tag>-->
-								<!--</tags>-->
+								<tags>
+									<tag>latest</tag>
+									<tag>${project.version}</tag>
+								</tags>
+                                <!--TODO:not necessary, since we're using maven filtering and a docker template file-->
 								<!--<ports>-->
 									<!--<port>8080</port>-->
 								<!--</ports>-->
