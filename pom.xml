@@ -98,13 +98,17 @@
 								<!--<volumes>-->
 									<!--<volume>/tmp</volume>-->
 								<!--</volumes>-->
+
 							</build>
+							<run>
+								<ports>
+									<port>9090:8080</port>
+								</ports>
+							</run>
 						</image>
 					</images>
 				</configuration>
 			</plugin>
-
-
 
 			<!--&lt;!&ndash;To be revisited once we're diving into kubernetes/openshift&ndash;&gt;-->
 			<!--<plugin>-->
