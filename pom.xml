@@ -66,12 +66,12 @@
 
 				<configuration>
 
-					<registry>docker.artifactory</registry>
-					<!--<registry>localhost:443</registry>-->
-					<authConfig>
-						<username>admin</username>
-						<password>password</password>
-					</authConfig>
+					<!--<registry>docker.artifactory</registry>-->
+					<!--&lt;!&ndash;<registry>localhost:443</registry>&ndash;&gt;-->
+					<!--<authConfig>-->
+						<!--<username>admin</username>-->
+						<!--<password>password</password>-->
+					<!--</authConfig>-->
 
 					<!--TODO: how to make this platform independent (running on a mac now, which is unix based):-->
                     <!--<dockerHost>http://127.0.0.1:2375</dockerHost>-->
