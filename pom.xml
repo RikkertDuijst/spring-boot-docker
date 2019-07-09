@@ -5,7 +5,7 @@
 
 	<groupId>guru.springframework</groupId>
 	<artifactId>spring-boot-docker</artifactId>
-	<version>0.0.3-SNAPSHOT</version>
+	<version>0.0.4-SNAPSHOT</version>
 	<packaging>jar</packaging>
 
 	<name>spring-boot-docker</name>
@@ -95,7 +95,8 @@
 
 								</assembly>
 								<tags>
-									<tag>latest</tag>
+									<!--TODO:reactivate?-->
+									<!--<tag>latest</tag>-->
 									<tag>${project.version}</tag>
 								</tags>
                                 <!--TODO:not necessary, since we're using maven filtering and a docker template file-->
